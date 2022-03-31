@@ -1,0 +1,77 @@
+﻿@model IEnumerable<TeamPerfomanceTracker.Models.Team>
+@{
+    ViewBag.Title = "SMHomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="main">
+    <div class="heading">
+        <h1>Teams</h1>
+        <div class="heading-buttons">
+            @Html.ActionLink("Create Member", "CreateMember", null, null, new { @class = "green-button" })
+            <a href="compare-teams.html" class="green-button">Compare Teams</a>
+            <a href="create-project.html" class="green-button">Create Project</a>
+            @Html.ActionLink("Create Team", "CreateTeam", null, null, new { @class = "green-button" })
+        </div>
+    </div>
+
+    <div class="home-top">
+
+        <div class="line-graph">
+            <canvas id="myLineChartTeam"></canvas>
+        </div>
+
+
+        <!-- Dynamic -->
+        <div class="performance-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Overall Performance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monthly Profit:</td>
+                        <td style="color: #B00808; opacity: 75%;">£0.484</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly Profit (%):</td>
+                        <td style="color: #B00808; opacity: 75%;">-0.85%</td>
+                    </tr>
+                    <tr>
+                        <td>Total Profit</td>
+                        <td style="color: #1AB03B; opacity: 75%;">£16,545</td>
+                    </tr>
+                    <tr>
+                        <td>Profit (%)</td>
+                        <td style="color: #1AB03B; opacity: 75%;">27.54%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Dynamic -->
+    <div class="home-team-table">
+        <table>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.TeamName</td>
+                <td>
+                    <a href="team-data.html" class="green-button">View Data</a>
+                    <a href="edit-team.html" class="green-button">Edit Data</a>
+                    @Html.ActionLink("Add Member", "GetTeam", "Team", new { model = item.TeamID }, new { @class = "green-button" })
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
+</div>
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script><!--ChartJS CDN-->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script><!--Data labels plugin-->
+<script src="js/linechartTeam.js"></script>

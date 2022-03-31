@@ -1,0 +1,152 @@
+﻿.main {
+    margin: 0 45px 0 45px;
+}
+
+/* Login Page */
+.center input[type="submit"]:hover {
+    background: #94c216;
+}
+
+/* Nav Bar */
+nav {
+    height: 75px;
+}
+
+    nav ul li {
+        width: 33%;
+    }
+
+.logo {
+    width: 250px;
+    height: 50px;
+}
+
+.name {
+    font-size: x-large;
+}
+
+.page-name {
+    text-align: center;
+    font-size: large;
+}
+
+/* Heading of page */
+.heading {
+    flex-direction: row;
+    align-items: center;
+}
+
+.heading-buttons {
+    display: block;
+}
+
+/* System manager and team leader home page top */
+.home-top {
+    flex-direction: row;
+}
+
+    .home-top div {
+        padding: 0;
+        width: 50%;
+    }
+
+/* Side Bar */
+.side-bar-container {
+    flex-direction: row;
+}
+
+/* Graphs */
+
+.team-member-graph {
+    width: 70%;
+    height: 70%;
+}
+
+    .team-member-graph img {
+        width: 70%;
+        height: 70%;
+    }
+
+/* Tables */
+
+/* Performance table */
+.performance-table table td {
+    font-size: x-large;
+}
+
+.performance-table table thead {
+    font-size: x-large;
+}
+
+/* System manager and team leader team table */
+.home-team-table table {
+    font-size: x-large;
+}
+
+/* View Member Data Table */
+
+.spread-table {
+    flex-direction: row;
+}
+
+    .spread-table table:first-child {
+        border-bottom: 4px solid #093968;
+        border-right: none;
+    }
+
+    .spread-table table:last-child {
+        border-top: 4px solid #093968;
+        border-left: none;
+    }
+
+    .spread-table table td {
+        font-size: 25px;
+        padding: 25px;
+    }
+
+/* Buttons */
+.green-button {
+    padding: 20px 40px 20px 40px;
+}
+
+    .green-button:hover {
+        background-color: #135392;
+    }
+
+.green-button-small {
+    padding: 20px 40px 20px 40px;
+}
+
+    .green-button-small:hover {
+        background-color: #135392;
+    }
+
+.red-button {
+    padding: 20px 40px 20px 40px;
+}
+
+    .red-button:hover {
+        background-color: #135392;
+    }
+
+/* Chart Styles */
+
+/* Doughnut Chart */
+
+.chartBox {
+    width: 740px;
+    height: 470px;
+    padding: 20px;
+}
+/*create team */
+.enter-team-data {
+    flex-direction: row;
+}
+
+    .enter-team-data input {
+        width: 40%;
+    }
+
+.add-team-member-buttons {
+    margin-top: 0;
+}

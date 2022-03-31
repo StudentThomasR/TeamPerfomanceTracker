@@ -1,0 +1,130 @@
+﻿
+@{
+    ViewBag.Title = "TMHomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="main">
+        <div class="heading">
+            <h1>My Team</h1>
+        </div>
+
+        <!-- Dynamic -->
+        <div class="side-bar-container">
+            <div class="side-bar">
+                <h3>Project Performance</h3>
+                <h3>Feedback Scores: </h3>
+                <h3>Productivity Percentage 78%</h3>
+            </div>
+
+            <!-- <div class="team-member-graph">
+              <img src="images/team-member-graph-example.png" />
+            </div> -->
+
+            <div>
+                <div>
+                    <div class="chartBox" style="width: 95%; height: 80vh;">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <script>
+              // setup
+              const data = {
+                labels: ["Contribution", "Group Work", "Happiness", "Pride", "Satisfaction"],
+                datasets: [{
+                  label: 'Member Performance',
+                  data: [20, 30, 3, 20, 45],
+                  backgroundColor: [
+                    "rgba(181, 206, 29, 0.5)", // green
+                    "rgba(255, 61, 0, 0.5)", // orange
+                    "rgba(0, 209, 255, 0.5)", // blue
+                    "rgba(196, 196, 196, 0.5)", // grey
+                    "rgba(254, 107, 239, 0.5)" // pink
+                  ],
+                  hoverOffset: 4,
+                  cutout: '70%', // space inside of doughnut
+                  offset: 5 // space between each section
+                }]
+              };
+
+              const doughnutLabelLine = {
+                id: 'doughnutLabelLine',
+                afterDraw(chart, args, options) {
+                  const {ctx, chartArea: {top, bottom, left, right, width, height}} = chart;
+
+                  chart.data.datasets.forEach((datasets, i) => {
+                    chart.getDatasetMeta(i).data.forEach((datapoint, index) => {
+                      const {
+                        x,
+                        y
+                      } = datapoint.tooltipPosition()
+
+                      // draw line
+                      const halfwidth = width / 2;
+                      const halfheight = height / 2;
+
+                      const xLine = x >= halfwidth ? x + 50 : x - 50;
+                      const yLine = y >= halfheight ? y + 50 : y - 50;
+                      const extraLine = x >= halfwidth ? 50 : -50;
+
+                      // line
+                      ctx.beginPath();
+                      ctx.moveTo(x, y);
+                      ctx.lineTo(xLine, yLine);
+                      ctx.lineTo(xLine + extraLine, yLine);
+                      ctx.strokeStyle = 'black';
+                      ctx.stroke();
+
+                      // text
+                      const textWidth = ctx.measureText(chart.data.labels[index]).width;
+                      ctx.font = '15px Arial';
+
+                      // control posistion
+                      const textXPosition = x >= halfwidth ? 'left' : 'right';
+                      const fivepx = x >= halfwidth ? 5 : -5;
+                      ctx.textAlign = textXPosition;
+                      ctx.textBaseline = 'middle';
+                      ctx.fillStyle = 'black';
+                      ctx.fillText(chart.data.labels[index], xLine + extraLine + fivepx, yLine);
+                    })
+                  })
+                }
+              }
+
+              // config
+              const config = {
+                type: 'doughnut',
+                data,
+                options: {
+                  layout: {
+                    padding: 20
+                  },
+
+                  responsive: true,
+                  maintainAspectRatio: false,
+
+                  plugins: {
+                    legend: {
+                      display: false,
+                    }
+                  }
+                },
+                plugins: [doughnutLabelLine]
+              };
+
+              // render init block
+              const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+              );
+
+                </script>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

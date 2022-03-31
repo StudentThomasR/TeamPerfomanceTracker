@@ -1,0 +1,449 @@
+﻿.main {
+    margin: 0 10px 0 10px;
+    padding-bottom: 50px;
+}
+
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Login Page */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+}
+
+    .center h1 {
+        color: #135392;
+        text-align: center;
+        padding: 10px 0 20px 0;
+    }
+
+    .center form {
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid #135392;
+    margin: 30px 0;
+}
+
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #135392;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.txt_field span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #94c216;
+    transition: 0.5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -5px;
+    color: #94c216;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+    width: 100%;
+}
+
+.center input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #135392;
+    border-radius: 15px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Nav Bar */
+nav {
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+}
+
+    nav ul {
+        padding: 0;
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        nav ul li:first-child {
+            width: 30%;
+        }
+
+        nav ul li {
+            width: 35%;
+        }
+
+.logo {
+    width: 125px;
+    height: 25px;
+}
+
+.name {
+    font-weight: bold;
+    color: #093968;
+    text-align: center;
+    font-size: x-small;
+    white-space: nowrap;
+}
+
+.page-name {
+    text-align: right;
+    font-size: smaller;
+}
+
+/* Page Heading */
+.heading {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-direction: column;
+}
+
+    .heading h1 {
+        color: #093968;
+    }
+
+.heading-buttons {
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+}
+
+/* System manager and team leader */
+
+/* System manager and team leader home page top */
+.home-top {
+    display: flex;
+    flex-direction: column;
+}
+
+    .home-top div {
+        width: 100%;
+        height: 100%;
+        padding: 20px 0 20px;
+    }
+
+/* Side Bar */
+.side-bar-container {
+    display: flex;
+    flex-direction: column;
+}
+
+    .side-bar-container div:first-child {
+        flex: 40%;
+    }
+
+    .side-bar-container div {
+        flex: 60%;
+    }
+
+.side-bar h3 {
+    padding: 15px 0;
+}
+
+/* Graphs */
+.line-graph {
+    width: 100%;
+    height: 100%;
+}
+
+    .line-graph canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+.bar-chart {
+    width: 100%;
+    height: 100%;
+}
+
+    .bar-chart canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+.team-member-graph {
+    width: 100%;
+    height: 100%;
+}
+
+    .team-member-graph img {
+        width: 100%;
+        height: 100%;
+    }
+
+/* Compare Teams page */
+
+.compare-graph-container div select {
+    padding: 10px;
+    color: #135392;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+}
+
+/* Tables */
+
+/* Performance Table */
+.performance-table {
+    width: 100%;
+    height: 100%;
+}
+
+    .performance-table table {
+        border: 4px solid #135392;
+        border-spacing: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+        .performance-table table td {
+            border: 1px solid #135392;
+            padding: 15px;
+            font-size: medium;
+            font-weight: bolder;
+            color: #135392;
+        }
+
+        .performance-table table thead {
+            background-color: #135392;
+            color: white;
+            font-size: medium;
+        }
+
+/* System manager and team leader team table */
+
+.home-team-table table {
+    border: 4px solid #135392;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+    color: #135392;
+    font-weight: bolder;
+    font-size: medium;
+}
+
+    .home-team-table table tr {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        border-bottom: 2px solid #135392;
+    }
+
+        .home-team-table table tr:last-child {
+            border: none;
+        }
+
+        .home-team-table table tr td {
+            padding: 25px;
+        }
+
+/* Buttons */
+.green-button {
+    padding: 15px 4px 15px 4px;
+    border-radius: 15px;
+    background-color: #94c216;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.green-button-small {
+    padding: 15px 25px 15px 25px;
+    border-radius: 15px;
+    background-color: #94c216;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+button {
+    box-shadow: none;
+}
+
+/* View Member Data Buttons */
+
+.red-button {
+    padding: 15px 4px 15px 4px;
+    border-radius: 15px;
+    background-color: #ff0000;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-bottom {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+/* View Member Data Table */
+
+.spread-table {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #093968;
+    border-spacing: 0;
+    width: auto;
+}
+
+        .spread-table:first-child {
+            border-bottom: none;
+        }
+
+        .spread-table:last-child {
+            border-top: none;
+        }
+
+        .spread-tableTd {
+            border: 1px solid #093968;
+            padding: 15px;
+            font-size: 12px;
+            font-weight: bolder;
+        }
+
+            .spread-tableTd:first-child {
+                color: #093968;
+            }
+    /* Edit Member Data */
+
+    .spread-table input {
+        border: none;
+        font-weight: bold;
+        background-color: lightgray;
+        font-size: 30px;
+        width: 250px;
+    }
+
+    .spread-table td:last-child {
+        padding: 0px 0px 0px 5px;
+        background-color: lightgray;
+        width: 255px;
+    }
+
+    .spread-table input:focus {
+        outline: none;
+        padding: 0;
+        width: 250px;
+    }
+
+    .spread-table input::placeholder {
+        color: black;
+    }
+
+/* Create project table */
+.create-project-table {
+    border: 1px solid #093968;
+    padding: 15px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+    .create-project-table input {
+        border: none;
+        font-weight: bold;
+        background-color: lightgray;
+        font-size: 30px;
+        width: 250px;
+    }
+
+/* Select  */
+
+.select {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+    .select:focus {
+        outline: none;
+    }
+
+/* create-team*/
+.create-team-table table {
+    border: 4px solid #093968;
+    border-spacing: 0;
+    width: 100%;
+}
+
+    .create-team-table table tr {
+        border: 1px solid #093968;
+    }
+
+    .create-team-table table td {
+        border: 1px solid #093968;
+        padding: 15px;
+        font-size: 12px;
+        font-weight: bolder;
+    }
+
+        .create-team-table table td:first-child {
+            color: #093968;
+        }
+
+.select-team:focus {
+    outline: none;
+}
+
+.enter-team-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .enter-team-data input {
+        padding: 20px;
+    }
+
+.add-team-member-buttons {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+    .add-team-member-buttons div {
+        margin-right: 15px;
+    }

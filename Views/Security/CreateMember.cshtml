@@ -1,0 +1,55 @@
+﻿@model TeamPerfomanceTracker.ViewModels.CreateMemberViewModel
+@{
+    ViewBag.Title = "Create Member";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Creating Member</h2>
+
+
+@using (Html.BeginForm())
+{
+<table>
+    <tr>
+        <td>@Html.LabelFor(c => c.UserID, "Users Logon ID:")</td>
+        <td>@Html.TextBoxFor(c => c.UserID) </td>
+        <td>@Html.ValidationMessageFor(c => c.UserID)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(c => c.FirstName, "First Name:")</td>
+        <td>@Html.TextBoxFor(c => c.FirstName) </td>
+        <td>@Html.ValidationMessageFor(c => c.FirstName)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(c => c.LastName, "Last Name:")</td>
+        <td>@Html.TextBoxFor(c => c.LastName) </td>
+        <td>@Html.ValidationMessageFor(c => c.LastName)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(c => c.Password, "Password:")</td>
+        <td>@Html.TextBoxFor(c => c.Password) </td>
+        <td>@Html.ValidationMessageFor(c => c.Password)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(c => c.AccType, "Account Type:")</td>
+        <td>@Html.TextBoxFor(c => c.AccType) </td>
+        <td>@Html.ValidationMessageFor(c => c.AccType)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input class="PostButton" type="submit" value="CreateMember" />
+        </td>
+    </tr>
+</table>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

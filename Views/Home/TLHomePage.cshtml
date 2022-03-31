@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "TLHomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="main">
+        <div class="heading">
+            <h1>Josh's Team Review</h1>
+            <div class="heading-buttons">
+                <a href="edit-team.html" class="green-button-small">Edit Team</a>
+            </div>
+        </div>
+
+        <div class="home-top">
+            <div class="line-graph">
+                <canvas id="myLineChartMember"></canvas>
+            </div>
+
+            <!-- Dynamic -->
+            <div class="performance-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">Overall Performance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monthly Profit:</td>
+                            <td style="color: #b00808; opacity: 75%">£0.001</td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Profit (%):</td>
+                            <td style="color: #b00808; opacity: 75%">-0.001%</td>
+                        </tr>
+                        <tr>
+                            <td>Total Profit</td>
+                            <td style="color: #1ab03b; opacity: 75%">£3,545</td>
+                        </tr>
+                        <tr>
+                            <td>Profit (%)</td>
+                            <td style="color: #1ab03b; opacity: 75%">19.54%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="heading">
+            <h1>Team Members</h1>
+        </div>
+
+        <!-- Dynamic -->
+        <div class="home-team-table">
+            <table>
+                <tr>
+                    <td>Team Member 1</td>
+                    <td>
+                        <a href="member-data.html" class="green-button">View Data</a>
+                        <a href="edit-member.html" class="green-button">Edit Data</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Team Member 2</td>
+                    <td>
+                        <a href="member-data.html" class="green-button">View Data</a>
+                        <a href="edit-member.html" class="green-button">Edit Data</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Team Member 3</td>
+                    <td>
+                        <a href="member-data.html" class="green-button">View Data</a>
+                        <a href="edit-member.html" class="green-button">Edit Data</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<!--ChartJS CDN-->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+<!--Data labels plugin-->
+<script src="js/linechartMember.js"></script>
+

@@ -1,0 +1,24 @@
+﻿@model TeamPerfomanceTracker.ViewModels.CreateTeamViewModel
+@{
+    ViewBag.Title = "CreateTeam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateTeam</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(c => c.TeamName, "Team Name:")</td>
+            <td>@Html.TextBoxFor(c => c.TeamName) </td>
+            <td>@Html.ValidationMessageFor(c => c.TeamName)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input class="PostButton" type="submit" value="CreateTeam" />
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,28 @@
+﻿@model TeamPerfomanceTracker.ViewModels.LogonViewModel
+@{
+    ViewBag.Title = "Logon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="center">
+    <h1>Login</h1>
+    @using (Html.BeginForm())
+    {
+        <div class="txt_field">
+            @Html.TextBoxFor(c => c.ID)
+            <span></span>
+            <label>ID</label>
+        </div>
+        <div class="txt_field">
+            @Html.PasswordFor(c => c.Password)
+            <span></span>
+            <label>Password</label>
+        </div>
+        <input type="submit" value="Login" />
+
+    }
+
+</div>
+
+

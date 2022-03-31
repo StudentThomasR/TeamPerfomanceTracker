@@ -1,0 +1,20 @@
+﻿@model IEnumerable<TeamPerfomanceTracker.Models.User>
+@{
+    ViewBag.Title = "AddMember";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddMember</h2>
+
+<table>
+    @foreach (var item in Model)
+    {
+
+        if (item.TeamID == null)
+        {
+            <tr>
+                <td>@item.FirstName @item.LastName @Html.ActionLink("Add Member", "GetUser", "Team", new { model = item.Id }, new { @class = "green-button" })</td>
+            </tr>
+        }
+    }
+</table>
