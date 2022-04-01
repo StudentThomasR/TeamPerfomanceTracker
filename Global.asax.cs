@@ -29,6 +29,7 @@ namespace TeamPerfomanceTracker
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
 
             container.Register<ITeamServices, TeamServices>();
+            container.Register<IProjectServices, ProjectServices>();
         }
 
 

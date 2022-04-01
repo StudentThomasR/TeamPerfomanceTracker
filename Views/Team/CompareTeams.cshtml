@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "CompareTeams";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main">
+    <div class="heading">
+        <h1>Compare Teams</h1>
+        <div class="heading-buttons">
+            <a href="sys-manager.html" class="green-button-small">Go Back</a>
+        </div>
+    </div>
+
+    <!-- Dynamic -->
+    <div class="compare-graph-container">
+        <div>
+            <select name="left-graph">
+                <option value="">Please Choose a Team</option>
+                <option value="dog">Team 1</option>
+                <option value="cat">Team 2</option>
+                <option value="hamster">Team 3</option>
+                <option value="parrot">Team 4</option>
+            </select>
+            <!-- <div class="bar-chart">
+              <img src="images/bar-graph-example.png" />
+            </div> -->
+
+            <div>
+                <div style="width: 580px; height: 500px; padding-right: 15px;">
+                    <canvas id="myBarChart1"></canvas>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <select name="right-graph">
+                <option value="">Please Choose a Team</option>
+                <option value="dog">Team 1</option>
+                <option value="cat">Team 2</option>
+                <option value="hamster">Team 3</option>
+                <option value="parrot">Team 4</option>
+            </select>
+            <!-- <div class="bar-chart">
+              <img src="images/bar-graph-example.png" />
+            </div> -->
+
+            <div>
+                <div style="width: 580px; height: 500px;">
+                    <canvas id="myBarChart2"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    
+

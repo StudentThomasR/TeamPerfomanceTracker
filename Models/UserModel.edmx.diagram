@@ -9,9 +9,11 @@
         <EntityTypeShape EntityType="TPTModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="TPTModel.FK_Team_ToUser" ManuallyRouted="false" />
         <AssociationConnector Association="TPTModel.FK_User_ToTeam" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="TPTModel.ClientFeedback" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="TPTModel.Project" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TPTModel.ClientFeedback" Width="1.5" PointX="5.5" PointY="2.625" />
+        <EntityTypeShape EntityType="TPTModel.Project" Width="1.5" PointX="0.75" PointY="4.625" />
         <EntityTypeShape EntityType="TPTModel.TeamFeedback" Width="1.5" PointX="4.75" PointY="4.75" />
+        <AssociationConnector Association="TPTModel.FK_Project_ToTeam" />
+        <AssociationConnector Association="TPTModel.FK_Team_ToProject" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,10 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+    <p>Welcome @Session["FirstName"].ToString() @Session["LastName"].ToString()</p>
 
     <div class="main">
         <div class="heading">
-            <h1>My Team</h1>
+            <h1>@Session["TeamName"].ToString()</h1>
         </div>
 
         <!-- Dynamic -->

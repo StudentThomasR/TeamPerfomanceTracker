@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.Web.Security;
 
 namespace TeamPerfomanceTracker.Services
 {
@@ -36,6 +37,12 @@ namespace TeamPerfomanceTracker.Services
             user = _context.Users.SingleOrDefault(c => c.UserID.Equals(model.ID) && c.Password.Equals(model.Password));
             return (user.AccType);
         }
+        public User GetsUserInfo(LogonViewModel model)
+        {
+            User user = null;
+            user = _context.Users.SingleOrDefault(c => c.UserID.Equals(model.ID) && c.Password.Equals(model.Password));
+            return (user);
+        }
 
         public void SaveUserToDB(CreateMemberViewModel model)
         {
@@ -49,6 +56,11 @@ namespace TeamPerfomanceTracker.Services
             _context.Users.Add(userDetails);
             _context.SaveChanges();
         }
+        public object GetUserTeam(int? model)
+        {
+            Team currentTeam = _context.Teams.Find(model);
+            return (currentTeam.TeamName);
+        }
     }
 
     public interface ISercurityService
@@ -56,5 +68,7 @@ namespace TeamPerfomanceTracker.Services
         bool IsValidUser(LogonViewModel model);
         string GetAccountType(LogonViewModel model);
         void SaveUserToDB(CreateMemberViewModel model);
+        User GetsUserInfo(LogonViewModel model);
+        object GetUserTeam(int? teamID);
     }
 }

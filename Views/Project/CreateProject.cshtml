@@ -1,0 +1,39 @@
+﻿@model TeamPerfomanceTracker.ViewModels.CreateProjectViewModel
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>CreateProject</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(c => c.ProjectName, "Project Name:")</td>
+            <td>@Html.TextBoxFor(c => c.ProjectName) </td>
+            <td>@Html.ValidationMessageFor(c => c.ProjectName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(c => c.ClientName, "Client Name:")</td>
+            <td>@Html.TextBoxFor(c => c.ClientName) </td>
+            <td>@Html.ValidationMessageFor(c => c.ClientName)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(c => c.Budget, "Last Name:")</td>
+            <td>@Html.TextBoxFor(c => c.Budget) </td>
+            <td>@Html.ValidationMessageFor(c => c.Budget)</td>
+        </tr>
+        <tr>
+            <td>@Html.DropDownListFor(c => c.TeamName, (IEnumerable<SelectListItem>)ViewBag.Teams, "Team")</td>
+            <td>@Html.ValidationMessageFor(c => c.TeamName)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input class="PostButton" type="submit" value="CreateProject" />
+            </td>
+        </tr>
+    </table>
+}

@@ -38,5 +38,13 @@ namespace TeamPerfomanceTracker.Controllers
         {
             return RedirectToAction("AddMember", "Team");
         }
+        public ActionResult CompareTeams()
+        {
+            return RedirectToAction("CompareTeams", "Team");
+        }
+        public ActionResult CreateProject()
+        {
+            return RedirectToAction("CreateProject", "Project");
+        }
     }
 }

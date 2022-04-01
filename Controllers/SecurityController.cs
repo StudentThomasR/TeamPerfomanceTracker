@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using TeamPerfomanceTracker.Services;
 using TeamPerfomanceTracker.ViewModels;
+using System.Web.Security;
+using TeamPerfomanceTracker.Models;
 
 namespace TeamPerfomanceTracker.Controllers
 {
@@ -29,6 +31,12 @@ namespace TeamPerfomanceTracker.Controllers
                 if (_service.IsValidUser(model))
                 {
                     string AccountType = _service.GetAccountType(model);
+                    User currentUser = _service.GetsUserInfo(model);
+                    Session["UserID"] = currentUser.UserID;
+                    Session["FirstName"] = currentUser.FirstName;
+                    Session["LastName"] = currentUser.LastName;
+                    Session["TeamID"] = currentUser.TeamID;
+                    Session["TeamName"] = _service.GetUserTeam(currentUser.TeamID);
                     if (AccountType == "SystemManager")
                     {
                         return RedirectToAction("SMHomePage", "Home");

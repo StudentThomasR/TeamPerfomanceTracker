@@ -14,9 +14,20 @@ namespace TeamPerfomanceTracker.Models
     
     public partial class Project
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Project()
+        {
+            this.Teams = new HashSet<Team>();
+        }
+    
         public int ProjectID { get; set; }
         public string ProjectName { get; set; }
         public string ClientName { get; set; }
-        public Nullable<decimal> Budget { get; set; }
+        public string Budget { get; set; }
+        public Nullable<int> TeamID { get; set; }
+    
+        public virtual Team Team { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Team> Teams { get; set; }
     }
 }

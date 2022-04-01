@@ -18,14 +18,19 @@ namespace TeamPerfomanceTracker.Models
         public Team()
         {
             this.Users = new HashSet<User>();
+            this.Projects = new HashSet<Project>();
         }
     
         public int TeamID { get; set; }
         public string TeamName { get; set; }
         public Nullable<int> Id { get; set; }
+        public Nullable<int> ProjectID { get; set; }
     
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User> Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Project> Projects { get; set; }
+        public virtual Project Project { get; set; }
     }
 }

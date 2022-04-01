@@ -13,7 +13,7 @@
         if (item.TeamID == null)
         {
             <tr>
-                <td>@item.FirstName @item.LastName @Html.ActionLink("Add Member", "GetUser", "Team", new { model = item.Id }, new { @class = "green-button" })</td>
+                <td>@item.FirstName @item.LastName @Html.ActionLink("Add Member", "GetUser", "Team", new { model = item.Id }, null)</td>
             </tr>
         }
     }

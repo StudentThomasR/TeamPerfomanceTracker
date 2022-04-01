@@ -13,9 +13,6 @@ namespace TeamPerfomanceTracker.Controllers
 {
     public class TeamController : Controller
     {
-        int userID = 999;
-        int teamID = 999;
-
         private ITeamServices _service = null;
         public TeamController(ITeamServices service)
         {
@@ -34,12 +31,12 @@ namespace TeamPerfomanceTracker.Controllers
         }
         public ActionResult GetTeam(int model)
         {
-            teamID = model;
+            Session["SelectedTeam"] = model;
             return RedirectToAction("AddMember", "Team");
         }
         public ActionResult GetUser(int model)
         {
-            userID = model;
+            Session["SelectedUser"] = model;
             return RedirectToAction("AddMember1", "Team");
         }
         public ActionResult AddMember()
@@ -49,8 +46,12 @@ namespace TeamPerfomanceTracker.Controllers
         }
         public ActionResult AddMember1()
         {
-            _service.AddUserToTeam(userID, teamID);
+            _service.AddUserToTeam(Session["SelectedUser"].GetHashCode(), Session["SelectedTeam"].GetHashCode());
             return RedirectToAction("SMHomePage", "Home");
+        }
+        public ActionResult CompareTeams()
+        {
+            return View();
         }
     }
 }

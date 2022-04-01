@@ -10,8 +10,8 @@
         <h1>Teams</h1>
         <div class="heading-buttons">
             @Html.ActionLink("Create Member", "CreateMember", null, null, new { @class = "green-button" })
-            <a href="compare-teams.html" class="green-button">Compare Teams</a>
-            <a href="create-project.html" class="green-button">Create Project</a>
+            @Html.ActionLink("Compare Teams", "CompareTeams", null, null, new { @class = "green-button" })
+            @Html.ActionLink("Create Project", "CreateProject", null, null, new { @class = "green-button" })
             @Html.ActionLink("Create Team", "CreateTeam", null, null, new { @class = "green-button" })
         </div>
     </div>
