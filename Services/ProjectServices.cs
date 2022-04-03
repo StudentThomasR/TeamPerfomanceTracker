@@ -26,6 +26,7 @@ namespace TeamPerfomanceTracker.Services
             Team TeamID = _context.Teams.SingleOrDefault(c => c.TeamName.Equals(model.TeamName));
             TeamID.TeamID = Convert.ToInt32(TeamID.TeamID);
             newProject.TeamID = TeamID.TeamID;
+            TeamID.ProjectID = newProject.ProjectID;
             _context.Projects.Add(newProject);
             _context.SaveChanges();
         }

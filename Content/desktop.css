@@ -138,7 +138,12 @@ nav {
     height: 470px;
     padding: 20px;
 }
-/*create team */
+
+/* create team */
+.create-team-table table td {
+    font-size: 25px;
+}
+
 .enter-team-data {
     flex-direction: row;
 }
@@ -149,4 +154,78 @@ nav {
 
 .add-team-member-buttons {
     margin-top: 0;
+}
+
+/* view team data page */
+
+/* Performance table */
+.performance-table-TD table:first-child {
+    margin-right: 10%;
+}
+
+.performance-table-TD table td {
+    font-size: large;
+}
+
+.performance-table-TD table thead {
+    font-size: large;
+}
+
+.performance-table-TD p {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.mini-nav {
+    margin-bottom: 15px;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.graphs,
+.tables,
+#feedback-scores {
+    display: flex;
+    flex-direction: row;
+}
+
+.line-graph-performance {
+    width: 50%;
+    height: 50vh;
+    margin-left: 20px;
+}
+
+.bar-chart-performance {
+    width: 50%;
+    height: 50vh;
+}
+
+#EF {
+    margin-left: 95px;
+}
+
+.select {
+    font-size: 25px;
+}
+
+/*Edit team*/
+.edit-team-container-1 {
+    flex-direction: row;
+}
+
+.edit-team-container {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.edit-team-members input {
+    width: 200px;
 }

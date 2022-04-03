@@ -29,10 +29,15 @@ namespace TeamPerfomanceTracker.Controllers
             _service.SaveTeamToDb(model);
             return RedirectToAction("SMHomePage", "Home");
         }
-        public ActionResult GetTeam(int model)
+        public ActionResult GetTeamAdd(int model)
         {
             Session["SelectedTeam"] = model;
             return RedirectToAction("AddMember", "Team");
+        }
+        public ActionResult GetTeamView(int model)
+        {
+            Session["SelectedTeam"] = model;
+            return RedirectToAction("ViewTeamData", "Team");
         }
         public ActionResult GetUser(int model)
         {
@@ -48,6 +53,14 @@ namespace TeamPerfomanceTracker.Controllers
         {
             _service.AddUserToTeam(Session["SelectedUser"].GetHashCode(), Session["SelectedTeam"].GetHashCode());
             return RedirectToAction("SMHomePage", "Home");
+        }
+        public ActionResult ViewTeamData()
+        {
+            TPTEntities1 Db = new TPTEntities1();
+            int teamID = Session["SelectedTeam"].GetHashCode();
+            Team currentTeam =_service.GetTeamDetails(teamID);
+            ViewBag.CurrentTeam = currentTeam;
+            return View(Db.Users.ToList());
         }
         public ActionResult CompareTeams()
         {

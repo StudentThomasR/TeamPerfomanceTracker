@@ -20,6 +20,7 @@
           <Property Name="ProjectName" Type="varchar" MaxLength="50" />
           <Property Name="ClientName" Type="varchar" MaxLength="50" />
           <Property Name="Budget" Type="varchar" MaxLength="50" />
+          <Property Name="BudgetUsed" Type="varchar" MaxLength="50" />
           <Property Name="TeamID" Type="int" />
         </EntityType>
         <EntityType Name="Team">
@@ -221,6 +222,7 @@
           <Property Name="TeamID" Type="Int32" />
           <NavigationProperty Name="Team" Relationship="TPTModel.FK_Project_ToTeam" FromRole="Project" ToRole="Team" />
           <NavigationProperty Name="Teams" Relationship="TPTModel.FK_Team_ToProject" FromRole="Project" ToRole="Team" />
+          <Property Name="BudgetUsed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TeamFeedback">
           <Key>
@@ -297,6 +299,7 @@
           <EntitySetMapping Name="Projects">
             <EntityTypeMapping TypeName="TPTModel.Project">
               <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="BudgetUsed" ColumnName="BudgetUsed" />
                 <ScalarProperty Name="TeamID" ColumnName="TeamID" />
                 <ScalarProperty Name="Budget" ColumnName="Budget" />
                 <ScalarProperty Name="ClientName" ColumnName="ClientName" />

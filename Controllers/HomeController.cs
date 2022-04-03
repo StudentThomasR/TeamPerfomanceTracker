@@ -46,5 +46,13 @@ namespace TeamPerfomanceTracker.Controllers
         {
             return RedirectToAction("CreateProject", "Project");
         }
+        public ActionResult EditProject()
+        {
+            return View();
+        }
+        public ActionResult ViewTeam()
+        {
+            return View();
+        }
     }
 }

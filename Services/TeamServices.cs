@@ -33,11 +33,17 @@ namespace TeamPerfomanceTracker.Services
             _context.SaveChanges();
 
         }
+        public Team GetTeamDetails(int team)
+        {
+            Team currentTeam = _context.Teams.Find(team);
+            return (currentTeam);
+        }
     }
 
     public interface ITeamServices
     {
         void SaveTeamToDb(CreateTeamViewModel model);
         void AddUserToTeam(int user, int team);
+        Team GetTeamDetails(int team);
     }
 }

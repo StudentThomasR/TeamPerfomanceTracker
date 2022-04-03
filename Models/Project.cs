@@ -25,6 +25,7 @@ namespace TeamPerfomanceTracker.Models
         public string ClientName { get; set; }
         public string Budget { get; set; }
         public Nullable<int> TeamID { get; set; }
+        public string BudgetUsed { get; set; }
     
         public virtual Team Team { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

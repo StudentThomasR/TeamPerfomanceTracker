@@ -9,8 +9,8 @@
 
 @using (Html.BeginForm())
 {
-<table>
-    <tr>
+<table class="spread-table">
+    <tr class="spread-tableTd">
         <td>@Html.LabelFor(c => c.UserID, "Users Logon ID:")</td>
         <td>@Html.TextBoxFor(c => c.UserID) </td>
         <td>@Html.ValidationMessageFor(c => c.UserID)</td>
@@ -38,7 +38,7 @@
     <tr>
         <td></td>
         <td>
-            <input class="PostButton" type="submit" value="CreateMember" />
+            <input class="btn-bottom" type="submit" value="CreateMember" />
         </td>
     </tr>
 </table>

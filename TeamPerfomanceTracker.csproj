@@ -373,6 +373,9 @@
     <Content Include="Views\Team\AddMember.cshtml" />
     <Content Include="Views\Team\CompareTeams.cshtml" />
     <Content Include="Views\Project\CreateProject.cshtml" />
+    <Content Include="Views\Team\ViewTeamData.cshtml" />
+    <Content Include="Views\Project\EditProject.cshtml" />
+    <Content Include="Views\Home\ViewTeam.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
