@@ -271,6 +271,7 @@
     <Content Include="Content\Images\logo.jpeg" />
     <Content Include="Content\Images\team-member-graph-example.png" />
     <Content Include="Content\js\barchart.js" />
+    <Content Include="Content\js\barchartperformance.js" />
     <Content Include="Content\js\linechartMember.js" />
     <Content Include="Content\js\linechartTeam.js" />
     <Content Include="Content\mobile.css" />
@@ -329,8 +330,6 @@
       <DependentUpon>UserModel.edmx</DependentUpon>
       <LastGenOutput>UserModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\UserModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
@@ -338,21 +337,6 @@
     <Content Include="Models\UserModel.edmx.diagram">
       <DependentUpon>UserModel.edmx</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
-    <Content Include="Scripts\jquery-3.6.0.js" />
-    <Content Include="Scripts\jquery-3.6.0.min.js" />
-    <Content Include="Scripts\jquery-3.6.0.slim.js" />
-    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
-    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
-    <Content Include="Scripts\jquery-3.6.0.min.map" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-ui-1.13.1.js" />
-    <Content Include="Scripts\jquery-ui-1.13.1.min.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -376,6 +360,9 @@
     <Content Include="Views\Team\ViewTeamData.cshtml" />
     <Content Include="Views\Project\EditProject.cshtml" />
     <Content Include="Views\Home\ViewTeam.cshtml" />
+    <Content Include="Views\Home\CompareData.cshtml" />
+    <Content Include="Views\Team\EditTeam.cshtml" />
+    <Content Include="Views\Home\EditMember.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

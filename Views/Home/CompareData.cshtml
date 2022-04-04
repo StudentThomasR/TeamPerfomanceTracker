@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "CompareData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main">
+    <div class="heading">
+        <h1>Engineer Feedback</h1>
+        <div class="heading-buttons">
+            <a onclick="history.back()" class="green-button-small">Go Back</a>
+        </div>
+    </div>
+
+    <!-- Dynamic -->
+    <div class="compare-graph-container">
+        <div>
+            <select name="left-graph">
+                <option value="">Please Choose a Member</option>
+                <option value="dog">Member 1</option>
+                <option value="cat">Member 2</option>
+                <option value="hamster">Member 3</option>
+                <option value="parrot">Member 4</option>
+            </select>
+
+            <div class="bar-chart">
+                <canvas id="myBarChart1"></canvas>
+            </div>
+        </div>
+
+        <div>
+            <select name="right-graph">
+                <option value="">Please Choose a Member</option>
+                <option value="dog">Member 1</option>
+                <option value="cat">Member 2</option>
+                <option value="hamster">Member 3</option>
+                <option value="parrot">Member 4</option>
+            </select>
+
+            <div class="bar-chart">
+                <canvas id="myBarChart2"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>

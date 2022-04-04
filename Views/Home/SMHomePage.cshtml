@@ -62,7 +62,7 @@
                 <td>@item.TeamName</td>
                 <td>
                     @Html.ActionLink("View Data", "GetTeamView", "Team", new { model = item.TeamID }, new { @class = "green-button" })
-                    <a href="edit-team.html" class="green-button">Edit Data</a>
+                    <a href="~/Views/Team/EditTeam.cshtml">~/Views/Team/EditTeam.cshtml</a> 
                     @Html.ActionLink("Add Member", "GetTeamAdd", "Team", new { model = item.TeamID }, new { @class = "green-button" })
                 </td>
             </tr>

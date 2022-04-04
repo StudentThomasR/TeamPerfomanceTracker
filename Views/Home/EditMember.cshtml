@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "EditMember";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main">
+    <div class="heading">
+        <h1>Member 1 / 148548</h1>
+    </div>
+
+    <div class="spread-table">
+        <table>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" placeholder="Tom" required /></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" placeholder="Hanks" required /></td>
+            </tr>
+            <tr>
+                <td>Date of Birth:</td>
+                <td><input type="text" placeholder="04/11/1989" required /></td>
+            </tr>
+            <tr>
+                <td>Start Date:</td>
+                <td><input type="text" placeholder="09/07/2017" required /></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>Team:</td>
+                <td><input type="text" placeholder="Team 1" required /></td>
+            </tr>
+            <tr>
+                <td>Project:</td>
+                <td>
+                    <select class="select">
+                        <option value="p1">Project 1</option>
+                        <option value="p2">Project 2</option>
+                        <option value="p3">Project 3</option>
+                        <option value="p4">Project 4</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Cooperation:</td>
+                <td><input type="text" placeholder="8.2" required /></td>
+            </tr>
+            <tr>
+                <td>Project Feedback:</td>
+                <td><input type="text" placeholder="7.1" required /></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="btn-bottom">
+        <a href="sys-manager.html"
+           class="green-button"
+           style="width: 140px; text-align: center">Back</a>
+        <a href="member-data.html"
+           class="green-button"
+           style="width: 140px; text-align: center">Update Member</a>
+    </div>
+</div>
+    </div>

@@ -1,129 +1,152 @@
 ﻿
 @{
     ViewBag.Title = "ViewTeam";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
-<div class="content">
-    <div class="mini-nav-all">
+<!DOCTYPE html>
+<html lang="en-GB">
 
-        <div class="main" style="margin-bottom: 15px;">
-            <div class="heading">
-                <h1>Team 1</h1>
-            </div>
-        </div>
 
-        <div class="mini-nav">
-            <div>
-                <a href="#" style="color: #8B0497; text-decoration: underline;">Team Performance</a>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#"><img class="logo" src="images/logo.jpeg" /></a>
+                    </li>
+                    <li><h2 class="name">Automation Team Performance Tracker</h2></li>
+                    <li><p class="page-name">Team 1</p></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="mini-nav-all">
+
+                <div class="main" style="margin-bottom: 15px;">
+                    <div class="heading">
+                        <h1>Team 1</h1>
+                    </div>
+                </div>
+
+                <div class="mini-nav">
+                    <div>
+                        <a href="#" style="color: #8B0497; text-decoration: underline;">Team Performance</a>
+                    </div>
+                    <div>
+                        <a href="engineer-feedback.html">Feedback Scores of Engineers</a>
+                    </div>
+                    <div>
+                        <a href="review-notes.html">Review Notes</a>
+                    </div>
+                    <div>
+                        <select class="select-project-link">
+                            <option value="p1"><a href="#">Project 1</a></option>
+                            <option value="p2"><a href="#">Project 2</a></option>
+                            <option value="p3"><a href="#">Project 3</a></option>
+                            <option value="p4"><a href="#">Project 4</a></option>
+                        </select>
+                    </div>
+                    <div>
+                        <a href="#">Members</a>
+                    </div>
+                </div>
             </div>
-            <div>
-                <a href="engineer-feedback.html">Feedback Scores of Engineers</a>
-            </div>
-            <div>
-                <a href="review-notes.html">Review Notes</a>
-            </div>
-            <div>
-                <select class="select-project-link">
-                    <option value="p1"><a href="#">Project 1</a></option>
-                    <option value="p2"><a href="#">Project 2</a></option>
-                    <option value="p3"><a href="#">Project 3</a></option>
-                    <option value="p4"><a href="#">Project 4</a></option>
-                </select>
-            </div>
-            <div>
-                <a href="#">Members</a>
+
+            <div class="main-section">
+                <div class="graphs">
+                    <div class="bar-chart-performance">
+                        <canvas id="myBarChart3"></canvas>
+                    </div>
+
+                    <div class="line-graph-performance">
+                        <canvas id="myLineChartMember"></canvas>
+                    </div>
+                </div>
+
+                <div id="overall-performance-txt">
+                    <p>Overall Team Performance 2022: 55.18%</p>
+                </div>
+
+                <div class="tables">
+                    <!-- Dynamic -->
+                    <div class="performance-table-TD">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td style="width: 220px;">Monthly Profit:</td>
+                                    <td style="color: #B00808; opacity: 75%;">£0.001</td>
+                                </tr>
+                                <tr>
+                                    <td>Monthly Profit (%):</td>
+                                    <td style="color: #B00808; opacity: 75%;">-0.001%</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Profit:</td>
+                                    <td style="color: #1AB03B; opacity: 75%;">£3,545</td>
+                                </tr>
+                                <tr>
+                                    <td>Profit (%)</td>
+                                    <td style="color: #1AB03B; opacity: 75%;">19.54%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Dynamic -->
+                    <div class="performance-table-TD">
+                        <table style="margin-right: 0;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p style="margin-bottom: 0;">Total Budget:</p>
+                                        <p style="color: #1AB03B; opacity: 75%; margin-top: 0;">£13,545</p>
+                                    </td>
+                                    <td>
+                                        <p style="width: 120px; margin-bottom: 0;">Initial Costs:</p>
+                                        <p style="color: #B00808; opacity: 75%; margin-top: 0;">£6,545</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Profit (%):</td>
+                                    <td style="color: #000">19.54%</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 220px;">Engineer Feedback (%):</td>
+                                    <td style="color: #000">78%</td>
+                                </tr>
+                                <tr>
+                                    <td>Customer Feedback (%):</td>
+                                    <td style="color: #000">£16,545</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="feedback-scores">
+                    <div>
+                        <p>Customer Feedback Score: 7.8</p>
+                    </div>
+                    <div id="EF">
+                        <p>Engineer Feedback Score: 6.8</p>
+                    </div>
+                </div>
+                <div class="btn-bottom">
+                    <a href="edit-project.html" class="green-button-small">Edit Project</a>
+                    <a onclick="history.back()" class="green-button-small">Back</a>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="main-section">
-        <div class="graphs">
-            <div class="bar-chart-performance">
-                <canvas id="myBarChart3"></canvas>
-            </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+        <!--ChartJS CDN-->
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+        <!--Data labels plugin-->
+        <script src="~/Content/js/barchartperformance.js"></script>
+        <script src="~/Content/js/linechartMember.js"></script>
 
-            <div class="line-graph-performance">
-                <canvas id="myLineChartMember"></canvas>
-            </div>
-        </div>
-
-        <div id="overall-performance-txt">
-            <p>Overall Team Performance 2022: 55.18%</p>
-        </div>
-
-        <div class="tables">
-            <!-- Dynamic -->
-            <div class="performance-table-TD">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td style="width: 220px;">Monthly Profit:</td>
-                            <td style="color: #B00808; opacity: 75%;">£0.001</td>
-                        </tr>
-                        <tr>
-                            <td>Monthly Profit (%):</td>
-                            <td style="color: #B00808; opacity: 75%;">-0.001%</td>
-                        </tr>
-                        <tr>
-                            <td>Total Profit:</td>
-                            <td style="color: #1AB03B; opacity: 75%;">£3,545</td>
-                        </tr>
-                        <tr>
-                            <td>Profit (%)</td>
-                            <td style="color: #1AB03B; opacity: 75%;">19.54%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Dynamic -->
-            <div class="performance-table-TD">
-                <table style="margin-right: 0;">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p style="margin-bottom: 0;">Total Budget:</p>
-                                <p style="color: #1AB03B; opacity: 75%; margin-top: 0;">£13,545</p>
-                            </td>
-                            <td>
-                                <p style="width: 120px; margin-bottom: 0;">Initial Costs:</p>
-                                <p style="color: #B00808; opacity: 75%; margin-top: 0;">£6,545</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Profit (%):</td>
-                            <td style="color: #000">19.54%</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 220px;">Engineer Feedback (%):</td>
-                            <td style="color: #000">78%</td>
-                        </tr>
-                        <tr>
-                            <td>Customer Feedback (%):</td>
-                            <td style="color: #000">£16,545</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div id="feedback-scores">
-            <div>
-                <p>Customer Feedback Score: 7.8</p>
-            </div>
-            <div id="EF">
-                <p>Engineer Feedback Score: 6.8</p>
-            </div>
-        </div>
-        <div class="btn-bottom">
-            <a href="edit-project.html" class="green-button-small">Edit Project</a>
-            <a onclick="history.back()" class="green-button-small">Back</a>
-        </div>
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-<!--ChartJS CDN-->
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
-<!--Data labels plugin-->
-<script src="js/barchartPerformance.js"></script>
-<script src="js/linechartMember.js"></script>
+</body>
+</html>

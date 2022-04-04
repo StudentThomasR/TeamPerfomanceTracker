@@ -621,3 +621,15 @@ button {
     border-spacing: 0;
     height: 1cm;
 }
+
+.ViewTeamDataHeader{
+    color:aqua
+}
+
+.teamData-table {
+    width: 30%;
+    height: 30%;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: lightgray;
+    border-color: #94c216;
+}

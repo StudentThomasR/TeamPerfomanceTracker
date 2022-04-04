@@ -38,6 +38,10 @@ namespace TeamPerfomanceTracker.Controllers
         {
             return RedirectToAction("AddMember", "Team");
         }
+        public ActionResult EditMember()
+        {
+            return View();
+        }
         public ActionResult CompareTeams()
         {
             return RedirectToAction("CompareTeams", "Team");
@@ -51,6 +55,14 @@ namespace TeamPerfomanceTracker.Controllers
             return View();
         }
         public ActionResult ViewTeam()
+        {
+            return View();
+        }
+        public ActionResult CompareData()
+        {
+            return View();
+        }
+        public ActionResult EditTeam()
         {
             return View();
         }

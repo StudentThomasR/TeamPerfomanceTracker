@@ -5,44 +5,59 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     Team CurrentTeam = ViewBag.CurrentTeam;
 }
+<div class="main">
+    <h2>View Team Data</h2>
 
-<h2>ViewTeamData</h2>
-
-<h3>Memebrs</h3>
-<table>
-    <tr>
-        <td>Name</td>
-        <td>Role</td>
-    </tr>
-    <tr>
-        <td></td>
-    </tr>
-    @foreach (var item in Model)
-    {
-
-        if (item.TeamID.ToString() == Session["SelectedTeam"].ToString())
-        {
+    <h3>Memebrs</h3>
+    <table class="teamData-table">
+        <thead>
             <tr>
-                <td>@item.FirstName @item.LastName</td>
-                <td>@item.AccType</td>
+                <td>Name</td>
+                <td>Role</td>
             </tr>
+        </thead>
+        <tr>
+            <td></td>
+        </tr>
+        @foreach (var item in Model)
+        {
+
+            if (item.TeamID.ToString() == Session["SelectedTeam"].ToString())
+            {
+                <tbody>
+                    <tr>
+                        <td>@item.FirstName @item.LastName</td>
+                        <td>@item.AccType</td>
+                    </tr>
+                </tbody>
+            }
         }
+    </table>
+    <h3>Projects</h3>
+
+    @if (CurrentTeam.ProjectID != null)
+    {
+        <table class="teamData-table">
+            <tr>
+                <td>Project</td>
+                <td>Client</td>
+                <td>Budget</td>
+                <td>Budget Used</td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>@CurrentTeam.Project.ProjectName</td>
+                <td>@CurrentTeam.Project.ClientName</td>
+                <td>@CurrentTeam.Project.Budget</td>
+                <td>@CurrentTeam.Project.BudgetUsed</td>
+            </tr>
+        </table>
     }
-</table>
-<table>
-    <tr>
-        <td>Project</td>
-        <td>Client</td>
-        <td>Budget</td>
-        <td>Budget Used</td>
-    </tr>
-    <tr>
-        <td></td>
-    </tr>
-    <tr>
-        <td>@CurrentTeam.Project.ProjectName</td>
-        <td>@CurrentTeam.Project.ClientName</td>
-        <td>@CurrentTeam.Project.Budget</td>
-        <td>@CurrentTeam.Project.BudgetUsed</td>
-    </tr>
-</table>
+    @if (CurrentTeam.ProjectID == null)
+    {
+        <p>This Team Has No Current Projects</p>
+    }
+</div>
+

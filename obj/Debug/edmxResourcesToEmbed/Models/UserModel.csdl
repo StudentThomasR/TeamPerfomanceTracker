@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TPTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="TeamID" />
+    </Key>
+    <Property Name="TeamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TeamName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Id" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Team_ToUser" FromRole="Team" ToRole="User" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_ToTeam" FromRole="Team" ToRole="User" />
+    <Property Name="ProjectID" Type="Int32" />
+    <NavigationProperty Name="Projects" Relationship="TPTModel.FK_Project_ToTeam" FromRole="Team" ToRole="Project" />
+    <NavigationProperty Name="Project" Relationship="TPTModel.FK_Team_ToProject" FromRole="Team" ToRole="Project" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TeamID" Type="Int32" />
+    <NavigationProperty Name="Teams" Relationship="Self.FK_Team_ToUser" FromRole="User" ToRole="Team" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_User_ToTeam" FromRole="User" ToRole="Team" />
+  </EntityType>
+  <Association Name="FK_Team_ToUser">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Team" Type="Self.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Team">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_ToTeam">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TPTEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Teams" EntityType="Self.Team" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Team_ToUser" Association="Self.FK_Team_ToUser">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Team" EntitySet="Teams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_ToTeam" Association="Self.FK_User_ToTeam">
+      <End Role="Team" EntitySet="Teams" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="ClientFeedbacks" EntityType="TPTModel.ClientFeedback" />
+    <EntitySet Name="Projects" EntityType="TPTModel.Project" />
+    <EntitySet Name="TeamFeedbacks" EntityType="TPTModel.TeamFeedback" />
+    <AssociationSet Name="FK_Project_ToTeam" Association="TPTModel.FK_Project_ToTeam">
+      <End Role="Team" EntitySet="Teams" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Team_ToProject" Association="TPTModel.FK_Team_ToProject">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Team" EntitySet="Teams" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ClientFeedback">
+    <Key>
+      <PropertyRef Name="ClientFeedbackID" />
+    </Key>
+    <Property Name="ClientFeedbackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientScore" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Budget" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TeamID" Type="Int32" />
+    <NavigationProperty Name="Team" Relationship="TPTModel.FK_Project_ToTeam" FromRole="Project" ToRole="Team" />
+    <NavigationProperty Name="Teams" Relationship="TPTModel.FK_Team_ToProject" FromRole="Project" ToRole="Team" />
+    <Property Name="BudgetUsed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TeamFeedback">
+    <Key>
+      <PropertyRef Name="TeamFeedbackID" />
+    </Key>
+    <Property Name="TeamFeedbackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContributionScore" Type="Int32" />
+    <Property Name="GroupWorkScore" Type="Int32" />
+    <Property Name="HappinessScore" Type="Int32" />
+    <Property Name="PrideScore" Type="Int32" />
+    <Property Name="SatisfactionScore" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Project_ToTeam">
+    <End Type="TPTModel.Team" Role="Team" Multiplicity="0..1" />
+    <End Type="TPTModel.Project" Role="Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="TeamID" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="TeamID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Team_ToProject">
+    <End Type="TPTModel.Project" Role="Project" Multiplicity="0..1" />
+    <End Type="TPTModel.Team" Role="Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="Team">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
