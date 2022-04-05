@@ -301,6 +301,16 @@ button {
     box-shadow: none;
 }
 
+.action-link a{
+    padding: 15px 4px 15px 4px;
+    border-radius: 15px;
+    background-color: #94c216;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
 /* View Member Data Buttons */
 
 .red-button {

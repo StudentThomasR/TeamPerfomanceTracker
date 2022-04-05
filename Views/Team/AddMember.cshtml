@@ -6,15 +6,17 @@
 
 <h2>AddMember</h2>
 
-<table>
-    @foreach (var item in Model)
-    {
-
-        if (item.TeamID == null)
+<div class="spread-table">
+    <table>
+        @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.FirstName @item.LastName @Html.ActionLink("Add Member", "GetUser", "Team", new { model = item.Id }, null)</td>
-            </tr>
+
+            if (item.TeamID == null)
+            {
+                <tr>
+                    <td>@item.FirstName @item.LastName @Html.ActionLink("Add Member", "GetUser", "Team", new { model = item.Id }, null)</td>
+                </tr>
+            }
         }
-    }
-</table>
+    </table>
+    </div>

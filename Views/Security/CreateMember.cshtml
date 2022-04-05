@@ -9,42 +9,39 @@
 
 @using (Html.BeginForm())
 {
-<table class="teamData-table">
-    <tr class="spread-tableTd">
-        <td>@Html.LabelFor(c => c.UserID, "Users Logon ID:")</td>
-        <td>@Html.TextBoxFor(c => c.UserID) </td>
-        <td>@Html.ValidationMessageFor(c => c.UserID)</td>
-    </tr>
-    <tr>
-        <td>@Html.LabelFor(c => c.FirstName, "First Name:")</td>
-        <td>@Html.TextBoxFor(c => c.FirstName) </td>
-        <td>@Html.ValidationMessageFor(c => c.FirstName)</td>
-    </tr>
-    <tr>
-        <td>@Html.LabelFor(c => c.LastName, "Last Name:")</td>
-        <td>@Html.TextBoxFor(c => c.LastName) </td>
-        <td>@Html.ValidationMessageFor(c => c.LastName)</td>
-    </tr>
-    <tr>
-        <td>@Html.LabelFor(c => c.Password, "Password:")</td>
-        <td>@Html.TextBoxFor(c => c.Password) </td>
-        <td>@Html.ValidationMessageFor(c => c.Password)</td>
-    </tr>
-    <tr>
-        <td>@Html.LabelFor(c => c.AccType, "Account Type:")</td>
-        <td>@Html.TextBoxFor(c => c.AccType) </td>
-        <td>@Html.ValidationMessageFor(c => c.AccType)</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>
-            <input class="btn-bottom" type="submit" value="CreateMember" />
-        </td>
-    </tr>
-</table>
+    <div class="spread-table">
+        <table class="teamData-table">
+            <tr>
+                <td>@Html.LabelFor(c => c.UserID, "Users Logon ID:")</td>
+                <td>@Html.TextBoxFor(c => c.UserID) </td>
+                <td>@Html.ValidationMessageFor(c => c.UserID)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.FirstName, "First Name:")</td>
+                <td>@Html.TextBoxFor(c => c.FirstName) </td>
+                <td>@Html.ValidationMessageFor(c => c.FirstName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.LastName, "Last Name:")</td>
+                <td>@Html.TextBoxFor(c => c.LastName) </td>
+                <td>@Html.ValidationMessageFor(c => c.LastName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.Password, "Password:")</td>
+                <td>@Html.TextBoxFor(c => c.Password) </td>
+                <td>@Html.ValidationMessageFor(c => c.Password)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(c => c.AccType, "Account Type:")</td>
+                <td>@Html.TextBoxFor(c => c.AccType) </td>
+                <td>@Html.ValidationMessageFor(c => c.AccType)</td>
+            </tr>
+        </table>
+    </div>
 }
+<input class="green-button" type="submit" value="CreateMember" />
 
-<div>
+<div class="action-link">
     @Html.ActionLink("Back to List", "Index")
 </div>
 
