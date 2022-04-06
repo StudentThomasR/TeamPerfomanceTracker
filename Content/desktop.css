@@ -121,6 +121,15 @@ nav {
         background-color: #135392;
     }
 
+.action-link a{
+    padding: 20px 40px 20px 40px;
+}
+
+    .action-link a:hover {
+        background-color: #135392;
+    }
+
+
 .red-button {
     padding: 20px 40px 20px 40px;
 }

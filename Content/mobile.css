@@ -300,15 +300,19 @@ nav {
 button {
     box-shadow: none;
 }
-
-.action-link a{
+.action-link {
+    display: inline;
     padding: 15px 4px 15px 4px;
+}
+.action-link a{
+    
     border-radius: 15px;
     background-color: #94c216;
     color: white;
     font-weight: bold;
     text-decoration: none;
     transition: 0.3s;
+   
 }
 
 /* View Member Data Buttons */
@@ -327,6 +331,15 @@ button {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
+}
+.PostButton {
+    padding: 15px 4px 15px 4px;
+    border-radius: 15px;
+    background-color: #94c216;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 /* View Member Data Table */
@@ -643,3 +656,5 @@ button {
     background-color: lightgray;
     border-color: #94c216;
 }
+
+

@@ -8,17 +8,16 @@
 
 @using (Html.BeginForm())
 {
-    <table>
-        <tr>
-            <td>@Html.LabelFor(c => c.TeamName, "Team Name:")</td>
-            <td>@Html.TextBoxFor(c => c.TeamName) </td>
-            <td>@Html.ValidationMessageFor(c => c.TeamName)</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input class="PostButton" type="submit" value="CreateTeam" />
-            </td>
-        </tr>
-    </table>
+    <div class="spread-table">
+        <table>
+            <tr>
+                <td>@Html.LabelFor(c => c.TeamName, "Team Name:")</td>
+                <td>@Html.TextBoxFor(c => c.TeamName) </td>
+                <td>@Html.ValidationMessageFor(c => c.TeamName)</td>
+            </tr>
+        </table>
+    </div>
+
+    <a href="../Home/SMHomePage" class="green-button">Go Back</a>
+    <input class="green-button" type="submit" value="CreateTeam" />
 }

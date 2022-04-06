@@ -12,7 +12,7 @@
 </div>
 @using (Html.BeginForm())
 {
-    <div class="teamData-table">
+    <div class="spread-table">
         <table>
             <tr>
                 <td>@Html.LabelFor(c => c.ProjectName, "Project Name:")</td>
@@ -41,13 +41,17 @@
                     </select>
                 </td>
             </tr>
-            <tr >
-                <td class="select">@Html.DropDownListFor(c => c.TeamName, (IEnumerable<SelectListItem>)ViewBag.Teams, "Team")</td >
-                <td class="select">@Html.ValidationMessageFor(c => c.TeamName)</td>
+            <tr>
+                <td>@Html.DropDownListFor(c => c.TeamName, (IEnumerable<SelectListItem>)ViewBag.Teams, "Team", new { @class = "select" })</td>
+                <td>@Html.ValidationMessageFor(c => c.TeamName)</td>
             </tr>
         </table>
-        <div class="btn-bottom">
-            <input class="green-button" type="submit" value="CreateProject" />
-        </div>
     </div>
-    }
+       
+            <a href="../Home/SMHomePage" class="green-button">Go Back</a>    
+            <input class="green-button" type="submit" value="CreateProject" />
+       
+  
+
+
+}

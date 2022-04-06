@@ -24,10 +24,10 @@ namespace TeamPerfomanceTracker
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css"));*/
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/mobile.css",
-                      "~/Content/desktop.css"));*/
+                      "~/Content/desktop.css"));
         }
     }
 }

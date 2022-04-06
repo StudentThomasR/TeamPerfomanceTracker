@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     <div class="spread-table">
-        <table class="teamData-table">
+        <table>
             <tr>
                 <td>@Html.LabelFor(c => c.UserID, "Users Logon ID:")</td>
                 <td>@Html.TextBoxFor(c => c.UserID) </td>
@@ -39,11 +39,12 @@
         </table>
     </div>
 }
+<div class="action-link">
+    @Html.ActionLink("Back to List", "../Home/SMHomePage")
+</div>
 <input class="green-button" type="submit" value="CreateMember" />
 
-<div class="action-link">
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
