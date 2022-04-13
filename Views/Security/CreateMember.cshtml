@@ -9,6 +9,7 @@
 
 @using (Html.BeginForm())
 {
+
     <div class="spread-table">
         <table>
             <tr>
@@ -38,12 +39,12 @@
             </tr>
         </table>
     </div>
-}
-<div class="action-link">
-    @Html.ActionLink("Back to List", "../Home/SMHomePage")
-</div>
-<input class="green-button" type="submit" value="CreateMember" />
 
+    <div class="action-link">
+        @Html.ActionLink("Back to List", "../Home/SMHomePage")
+    </div>
+    <input class="green-button" type="submit" value="CreateMember" />
+    }
 
 
 @section Scripts {
